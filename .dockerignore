@@ -1,0 +1,17 @@
+.git
+.gitignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.license
+temp_work/
+output_clips/
+*.bat
+cloudflared.exe
+ngrok.exe
+ffmpeg.exe
+*.zip
+.vscode/
+.idea/
+.hf_config.json
