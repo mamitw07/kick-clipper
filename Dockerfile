@@ -26,8 +26,9 @@ RUN pip install --no-cache-dir --user -r requirements.txt
 # Copy all project files
 COPY --chown=user:user . $HOME/app/
 
-# Ensure output and temp dirs exist and are writable
-RUN mkdir -p $HOME/app/temp_work $HOME/app/output_clips
+# Ensure working and static dirs exist (handles root or subfolder uploads)
+RUN mkdir -p $HOME/app/temp_work $HOME/app/output_clips $HOME/app/static && \
+    (cp -f index.html manifest.json sw.js icon-*.png static/ 2>/dev/null || true)
 
 # Expose HF Spaces port
 EXPOSE 7860

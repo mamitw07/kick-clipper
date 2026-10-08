@@ -2013,7 +2013,8 @@ class KickHighlightExtractor:
                 safe_text = safe_text[:42] + "..."
             
             font_path = "C:/Windows/Fonts/arialbd.ttf"
-            font_arg = f"fontfile='{font_path.replace(':', r'\:')}':" if sys.platform == "win32" and os.path.exists(font_path) else ""
+            escaped_font_path = font_path.replace(':', r'\:')
+            font_arg = f"fontfile='{escaped_font_path}':" if sys.platform == "win32" and os.path.exists(font_path) else ""
             
             h_scale = max(0.5, min(2.5, float(header_scale or 1.0)))
             f_size = max(24, min(90, int(42 * h_scale)))
