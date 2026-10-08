@@ -244,6 +244,11 @@ class KickHighlightExtractor:
             'retries': 2,
             'fragment_retries': 2,
             'ffmpeg_location': ff_bin,
+            'extractor_args': {
+                'youtube': {
+                    'player_client': ['ios', 'android', 'web']
+                }
+            }
         }
         if os.path.exists(node_path):
             opts['js_runtimes'] = {'node': {'path': node_path}}
